@@ -1,6 +1,17 @@
+import { Metadata } from "next";
+
 import { LoginForm } from "@/components/shared";
 import ThemeToggle from "@/components/ui/ThemeToggle/ThemeToggle";
 
+export const metadata: Metadata = {
+  title: "home",
+  description: " home page",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 const Home = () => {
   return (
     <div className="flex  items-center justify-center  w-full h-screen">

@@ -16,7 +16,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "MyTestProject",
   description: "A demo project showing my Next.js skills.",
-  viewport: "width=device-width, initial-scale=1",
   authors: [{ name: "Your Name" }],
   openGraph: {
     title: "MyTestProject",
@@ -28,6 +27,11 @@ export const metadata: Metadata = {
     title: "MyTestProject",
     description: "A demo project showing my Next.js skills.",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

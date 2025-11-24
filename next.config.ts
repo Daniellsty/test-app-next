@@ -1,8 +1,18 @@
-import type { NextConfig } from "next";
-
+import { NextConfig } from "next";
+import path from "path";
 const nextConfig: NextConfig = {
   images: {
-    domains: ["fakestoreapi.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "fakestoreapi.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
+  turbopack: {
+    root: path.resolve(__dirname),
   },
 };
 
