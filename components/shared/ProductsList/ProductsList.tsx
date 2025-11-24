@@ -8,17 +8,15 @@ type Product = {
   category: string;
   image: string;
 };
-
+export const revalidate = 10;
 const ProductsList = async () => {
-  const res = await fetch("https://fakestoreapi.com/products", {
-    next: { revalidate: 60 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
+  let products: Product[] = [];
+  try {
+    const res = await fetch("https://fakestoreapi.com/products");
+    products = await res.json();
+  } catch (err) {
+    console.error("Failed to fetch products", err);
   }
-
-  const products: Product[] = await res.json();
 
   return (
     <section className="p-6 max-w-4xl mx-auto">
